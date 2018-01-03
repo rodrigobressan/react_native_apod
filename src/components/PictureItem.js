@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Text, View} from "react-native";
+import {Image, Text, View} from "react-native";
 
 class PictureItem extends Component {
 
@@ -8,6 +8,9 @@ class PictureItem extends Component {
 
         return (
             <View>
+                <Image
+                    source={{uri: url}}
+                    style={{flex: 1, height: 150}}/>
                 <Text>{title}</Text>
             </View>
         )
