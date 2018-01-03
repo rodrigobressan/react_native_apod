@@ -1,30 +1,21 @@
 import React, {Component} from 'react';
-import {ListView, Text, View} from "react-native";
+import {ListView} from "react-native";
+import {connect} from 'react-redux';
 import PictureItem from "./PictureItem";
-
-var items = [
-    {
-        title: "First item",
-        explanation: "Explanation for first item",
-        url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/NASA_logo.svg/1200px-NASA_logo.svg.png"
-    }, {
-        title: "Second item",
-        explanation: "Explanation for second item",
-        url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/NASA_logo.svg/1200px-NASA_logo.svg.png"
-    }, {
-        title: "Third item",
-        explanation: "Explanation for third item",
-        url: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/NASA_logo.svg/1200px-NASA_logo.svg.png"
-    }
-];
+import {itemsFetch} from "../../actions/ListItemsActions";
 
 class PictureList extends Component {
 
     componentWillMount() {
-        this.createDataSource(items);
+        this.props.itemsFetch();
+        this.createDataSource(this.props);
     }
 
-    createDataSource(items) {
+    componentWillReceiveProps(nextProps) {
+        this.createDataSource(nextProps);
+    }
+
+    createDataSource({items}) {
         const dataSource = new ListView.DataSource({
             rowHasChanged: (r1, r2) => r1 !== r2
         });
@@ -47,4 +38,10 @@ class PictureList extends Component {
     }
 }
 
-export default PictureList;
+const mapStateToProps = state => {
+    const items = state.items;
+
+    return {items};
+};
+
+export default connect(mapStateToProps, {itemsFetch})(PictureList);

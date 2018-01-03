@@ -9,7 +9,12 @@
   "dependencies": {
     "axios": "^0.17.1",
     "react": "16.0.0",
-    "react-native": "0.51.0"
+    "react-native": "0.51.0",
+    "react-native-router-flux": "^4.0.0-beta.24",
+    "react-redux": "^5.0.6",
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0",
+    "thunk": "0.0.1"
   },
   "devDependencies": {
     "babel-jest": "22.0.4",
