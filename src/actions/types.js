@@ -1,0 +1,1 @@
+export const ITEMS_FETCH_SUCCESS = 'items_fetch_success';
