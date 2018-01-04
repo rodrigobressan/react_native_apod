@@ -1,14 +1,20 @@
 import React, {Component} from 'react';
 import {ImageBackground, Text, View} from "react-native";
 import {Card} from "../common/Card";
+import {Actions} from 'react-native-router-flux';
 
 class PictureItem extends Component {
+
+    onRowPress() {
+        console.log('onPress');
+        Actions.pictureDetail({item: this.props.item});
+    }
 
     render() {
         const {title, explanation, url} = this.props.item;
 
         return (
-            <Card>
+            <Card onPress={this.onRowPress.bind(this)}>
                 <ImageBackground
                     source={{uri: url}}
                     style={styles.imageStyle}>

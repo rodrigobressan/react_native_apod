@@ -5,6 +5,7 @@ import {Provider} from 'react-redux';
 import {createStore, applyMiddleware} from 'redux';
 import ReduxThunk from 'redux-thunk';
 import reducers from '../reducers';
+import Router from "../Router";
 
 class App extends Component {
 
@@ -14,9 +15,10 @@ class App extends Component {
 
         return (
             <Provider store={store}>
-                <View style={{flex: 1}}>
-                    <PictureList/>
-                </View>
+                <Router/>
+                {/*<View style={{flex: 1}}>*/}
+                    {/*<PictureList/>*/}
+                {/*</View>*/}
             </Provider>
         );
     }

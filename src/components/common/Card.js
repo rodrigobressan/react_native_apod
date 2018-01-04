@@ -4,7 +4,7 @@ import {TouchableOpacity, View} from 'react-native';
 const Card = (props) => {
 
     return (
-        <TouchableOpacity style={styles.containerStyle}>
+        <TouchableOpacity onPress={props.onPress} style={styles.containerStyle}>
             {props.children}
         </TouchableOpacity>
     );
