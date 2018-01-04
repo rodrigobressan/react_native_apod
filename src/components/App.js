@@ -14,7 +14,7 @@ class App extends Component {
 
         return (
             <Provider store={store}>
-                <View>
+                <View style={{flex: 1}}>
                     <PictureList/>
                 </View>
             </Provider>
