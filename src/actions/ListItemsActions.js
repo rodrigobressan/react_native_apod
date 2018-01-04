@@ -1,9 +1,10 @@
 import {ITEMS_FETCH_SUCCESS} from "./types";
 import axios from 'axios';
+import {API_APOD_URL} from "../config/api";
 
 export const itemsFetch = () => {
     return (dispatch) => {
-        axios.get('https://api.nasa.gov/planetary/apod?api_key=dUHK1i1WCsZjXAKnUrv7v5ZeXJwrQOg9yOSkg4cN&count=10')
+        axios.get(API_APOD_URL)
             .then((response) => {
                 console.log('response: ', response);
                 dispatch({type: ITEMS_FETCH_SUCCESS, payload: response.data});

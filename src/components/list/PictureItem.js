@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Image, Text, View} from "react-native";
+import {Image, ImageBackground, Text, View} from "react-native";
 import {Card} from "../common/Card";
 
 class PictureItem extends Component {
@@ -9,14 +9,21 @@ class PictureItem extends Component {
 
         return (
             <Card>
-                <Image
+                <ImageBackground
                     source={{uri: url}}
-                    style={styles.imageStyle}/>
+                    style={styles.imageStyle}>
 
-                <View style={styles.textContainer}>
-                    <Text style={styles.titleText}>{title}</Text>
-                    <Text style={styles.explanationText}>{explanation}</Text>
-                </View>
+                    <View
+                        style={{backgroundColor: 'rgba(0,0,0,0.4)', flex: 1}}>
+
+                        <View style={styles.textContainer}>
+                            <Text style={styles.titleText}>{title}</Text>
+                            <Text style={styles.explanationText}
+                                  numberOfLines={3}>{explanation}</Text>
+                        </View>
+                    </View>
+                </ImageBackground>
+
 
             </Card>
         )
@@ -29,12 +36,16 @@ const styles = {
         height: 150
     },
     textContainer: {
+        justifyContent: 'flex-end',
+        flex: 1,
         padding: 5
     },
     titleText: {
+        color: 'white',
         fontSize: 18
     },
     explanationText: {
+        color: 'white',
         fontSize: 14
     }
 };
