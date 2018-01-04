@@ -1,9 +1,12 @@
 import React, {Component} from 'react';
-import {FlatList, ListView, ScrollView, Text, View} from "react-native";
+import {FlatList, Image, Text, View} from "react-native";
 import {connect} from 'react-redux';
 import PictureItem from "./PictureItem";
 import {itemsFetch} from "../../actions/ListItemsActions";
 import Loading from "../common/Loading";
+import {STATE_EMPTY_VIEW, STATE_ERROR, STATE_LOADING, STATE_SUCCESS} from "./states";
+import Error from "../common/Error";
+import Empty from "../common/Empty";
 
 class PictureList extends Component {
 
@@ -26,37 +29,20 @@ class PictureList extends Component {
         );
     }
 
-    renderEmptyView() {
-        return (
-            <Text>Nothing here :-(</Text>
-        );
-    }
-
-    renderLoading() {
-        return (
-            <Loading/>
-        );
-    }
-
     get renderScreen() {
+        switch (this.props.state) {
+            case STATE_EMPTY_VIEW:
+                return <Empty/>;
 
-        if (this.isLoading()) {
-            return this.renderLoading();
+            case STATE_ERROR:
+                return <Error/>;
+
+            case STATE_LOADING:
+                return <Loading/>;
+
+            case STATE_SUCCESS:
+                return this.renderList();
         }
-
-        if (this.hasContentToDisplay()) {
-            return this.renderList();
-        } else {
-            return this.renderEmptyView();
-        }
-    }
-
-    isLoading() {
-        return this.props.loading;
-    }
-
-    hasContentToDisplay() {
-        return this.props.items && this.props.items.length > 0
     }
 
     render() {
@@ -71,8 +57,7 @@ class PictureList extends Component {
 const mapStateToProps = state => {
     return {
         items: state.listItems.items,
-        loading: state.listItems.loading,
-        error: state.listItems.loading
+        state: state.listItems.state
     };
 
 };

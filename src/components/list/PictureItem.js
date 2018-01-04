@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Image, ImageBackground, Text, View} from "react-native";
+import {ImageBackground, Text, View} from "react-native";
 import {Card} from "../common/Card";
 
 class PictureItem extends Component {
