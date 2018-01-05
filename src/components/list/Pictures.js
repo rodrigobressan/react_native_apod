@@ -2,16 +2,17 @@ import React, {Component} from 'react';
 import {FlatList, Image, Text, View} from "react-native";
 import {connect} from 'react-redux';
 import PictureItem from "./PictureItem";
-import {itemsFetch} from "../../actions/ListItemsActions";
+import {fetchItems} from "../../actions/ListItemsActions";
 import Loading from "../common/Loading";
 import {STATE_EMPTY_VIEW, STATE_ERROR, STATE_LOADING, STATE_SUCCESS} from "./states";
 import Error from "../common/Error";
 import Empty from "../common/Empty";
 
-class PictureList extends Component {
+class Pictures extends Component {
 
     componentWillMount() {
-        this.props.itemsFetch();
+        console.log(this.props);
+        this.props.fetchItems();
     }
 
     renderItem({item}) {
@@ -62,4 +63,4 @@ const mapStateToProps = state => {
 
 };
 
-export default connect(mapStateToProps, {itemsFetch})(PictureList);
+export default connect(mapStateToProps, {fetchItems: fetchItems})(Pictures);

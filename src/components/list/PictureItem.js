@@ -6,7 +6,6 @@ import {Actions} from 'react-native-router-flux';
 class PictureItem extends Component {
 
     onRowPress() {
-        console.log('onPress');
         Actions.pictureDetail({item: this.props.item});
     }
 
@@ -39,7 +38,7 @@ class PictureItem extends Component {
 const styles = {
     imageStyle: {
         flex: 1,
-        height: 150
+        height: 200
     },
     textContainer: {
         justifyContent: 'flex-end',

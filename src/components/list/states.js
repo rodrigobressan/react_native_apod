@@ -2,7 +2,7 @@
  * This class is used mostly to store the existent states on most of our application components. Those are basically
  * used to know which view to display to the user based on the information received from our Action class.
  *
- * @see PictureList component, that relies heavily on the usage of states
+ * @see Pictures component, that relies heavily on the usage of states
  */
 
 /** When we are in the middle of some operation (HTTP request, heavy computation, etc) **/

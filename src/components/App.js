@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Text, View} from "react-native";
-import PictureList from "./list/PictureList";
+import PictureList from "./list/Pictures";
 import {Provider} from 'react-redux';
 import {createStore, applyMiddleware} from 'redux';
 import ReduxThunk from 'redux-thunk';
@@ -16,9 +16,6 @@ class App extends Component {
         return (
             <Provider store={store}>
                 <Router/>
-                {/*<View style={{flex: 1}}>*/}
-                    {/*<PictureList/>*/}
-                {/*</View>*/}
             </Provider>
         );
     }

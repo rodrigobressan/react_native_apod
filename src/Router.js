@@ -1,7 +1,9 @@
 import React from 'react';
 import {Router, Scene} from "react-native-router-flux";
-import PictureList from "./components/list/PictureList";
+import PictureList from "./components/list/Pictures";
 import PictureDetail from "./components/PictureDetail";
+import {Actions} from 'react-native-router-flux';
+import Favorite from "./components/Favorite";
 
 const RouterComponent = () => {
     return (
@@ -12,8 +14,10 @@ const RouterComponent = () => {
 
                 <Scene
                     initial
-                    onRight={() => console.log('refresh')}
-                    rightTitle="Refresh"
+                    onRight={() => {
+                        Actions.favoriteList();
+                    }}
+                    rightTitle="Favorite"
                     key="pictureList"
                     component={PictureList}
                     title="Pictures"/>
@@ -21,6 +25,10 @@ const RouterComponent = () => {
                 <Scene
                     key="pictureDetail"
                     component={PictureDetail}/>
+
+                <Scene
+                    key="favoriteList"
+                    component={Favorite}/>
             </Scene>
         </Router>
     );
