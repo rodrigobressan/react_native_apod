@@ -11,7 +11,7 @@ class Empty extends Component {
                         height: 200,
                         resizeMode: 'contain'
                     }}
-                    source={{uri: 'https://i.pinimg.com/originals/57/9f/0e/579f0e9de92280aa94f42164cb0fbf58.gif'}}
+                    source={require('./../../../res/empty.gif')}
                 />
             </View>
         );

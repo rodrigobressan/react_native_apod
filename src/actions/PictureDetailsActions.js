@@ -1,5 +1,9 @@
 import PictureRepository from "../data/PictureRepository";
-import {ITEM_DETAILS_FETCH_SUCCESS} from "./types";
+import {
+    ITEM_DETAILS_FAVORITE,
+    ITEM_DETAILS_FETCH_SUCCESS,
+    ITEM_DETAILS_REMOVE_FAVORITE
+} from "./types";
 
 export const fetchPictureDetails = (pictureDate) => {
     return (dispatch) => {
@@ -14,19 +18,20 @@ export const fetchPictureDetails = (pictureDate) => {
 };
 
 export const favorite = (picture) => {
-    return () => {
+    return (dispatch) => {
         PictureRepository.favoritePicture(picture)
-            .then((response) => {
-                //  dispatch()
+            .then(() => {
+                dispatch({type: ITEM_DETAILS_FAVORITE});
             })
             .catch(error => console.log('error: ', error));
     }
 };
 
 export const removeFavorite = (picture) => {
-    return () => {
+    return (dispatch) => {
         PictureRepository.removeFromFavorites(picture)
-            .then(response => {
+            .then(() => {
+                dispatch({type: ITEM_DETAILS_REMOVE_FAVORITE});
             })
             .catch(error => {
             });

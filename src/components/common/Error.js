@@ -11,7 +11,7 @@ class Error extends Component {
                         height: 200,
                         resizeMode: 'contain'
                     }}
-                    source={{uri: 'https://pics.me.me/houston-we-have-a-problem-14670770.png'}}
+                    source={require('./../../../res/error.png')}
                 />
             </View>
         );

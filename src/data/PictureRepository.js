@@ -10,10 +10,8 @@ var PictureRepository = {
             axios.get(API_APOD_URL)
                 .then((response) => {
                     resolve(response.data);
-                    console.log('response :', response);
                 })
                 .catch((error) => {
-                    console.log('error fetching :', error);
                     reject(error);
                 });
         })

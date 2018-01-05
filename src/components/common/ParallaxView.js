@@ -10,6 +10,8 @@ import ReactNative from "react-native";
 
 /**
  * BlurView temporarily removed until semver stuff is set up properly
+ *
+ * All credits to: https://github.com/lelandrichardson/react-native-parallax-view
  */
 import ScrollableMixin from "react-native-scrollable-mixin";
 

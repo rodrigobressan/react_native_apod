@@ -3,7 +3,7 @@ import {AsyncStorage, Text, TouchableOpacity, View, StyleSheet} from "react-nati
 import ParallaxView from "./common/ParallaxView";
 import PictureRepository from "../data/PictureRepository";
 import {connect} from 'react-redux';
-import {fetchPictureDetails} from "../actions/PictureDetailsActions";
+import {favorite, fetchPictureDetails, removeFavorite} from "../actions/PictureDetailsActions";
 
 class PictureDetail extends Component {
 
@@ -12,23 +12,13 @@ class PictureDetail extends Component {
     }
 
     onFavoritePress() {
-        console.log('click favorite');
-        PictureRepository.favoritePicture(this.props.item)
-            .then(() => {
-                this.props.fetchPictureDetails(this.props.item.date);
-                console.log('Favorite done!');
-            })
-            .catch((error) => {
-                console.log('Error happened while trying to save: ', error);
-            });
+        this.props.favoritePicture(this.props.item);
+        this.props.fetchPictureDetails(this.props.item.date);
     }
 
     onRemoveFavoritePress() {
-        PictureRepository.removeFromFavorites(this.props.item)
-            .then(() => {
-                this.props.fetchPictureDetails(this.props.item.date);
-            })
-
+        this.props.removeFavorite(this.props.item);
+        this.props.fetchPictureDetails(this.props.item.date);
     }
 
     get renderFavorite() {
@@ -115,5 +105,10 @@ const mapStateToProps = state => {
         picture: state.pictureDetails.picture
     };
 };
-export default connect(mapStateToProps, {fetchPictureDetails: fetchPictureDetails})
+export default connect(mapStateToProps,
+    {
+        fetchPictureDetails: fetchPictureDetails,
+        favoritePicture: favorite,
+        removeFavorite: removeFavorite
+    })
 (PictureDetail);

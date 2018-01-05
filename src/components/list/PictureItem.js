@@ -19,17 +19,16 @@ class PictureItem extends Component {
                     style={styles.imageStyle}>
 
                     <View
-                        style={{backgroundColor: 'rgba(0,0,0,0.4)', flex: 1}}>
+                        style={styles.blurView}>
 
                         <View style={styles.textContainer}>
                             <Text style={styles.titleText}>{title}</Text>
-                            <Text style={styles.explanationText}
-                                  numberOfLines={3}>{explanation}</Text>
+                            <Text style={styles.explanationText} numberOfLines={3}>
+                                {explanation}
+                            </Text>
                         </View>
                     </View>
                 </ImageBackground>
-
-
             </Card>
         )
     }
@@ -52,6 +51,10 @@ const styles = {
     explanationText: {
         color: 'white',
         fontSize: 14
+    },
+    blurView: {
+        backgroundColor: 'rgba(0,0,0,0.4)',
+        flex: 1
     }
 };
 

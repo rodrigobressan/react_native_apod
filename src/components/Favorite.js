@@ -17,7 +17,6 @@ class Favorite extends Component {
     }
 
     renderItem({item}) {
-        console.log('render item: ', item);
         return (
             <PictureItem item={item}/>
         );

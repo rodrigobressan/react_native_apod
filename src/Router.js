@@ -7,7 +7,9 @@ import Favorite from "./components/Favorite";
 
 const RouterComponent = () => {
     return (
-        <Router>
+        <Router
+            navButtonColor='black'
+            >
             <Scene
                 key="main"
                 hideTabBar>
@@ -27,6 +29,7 @@ const RouterComponent = () => {
                     component={PictureDetail}/>
 
                 <Scene
+                    title="Favorites"
                     key="favoriteList"
                     component={Favorite}/>
             </Scene>
