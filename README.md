@@ -20,7 +20,10 @@ feel free to open a new issue and I will check it out for sure.
 
 ### Demo
 
+Pictures list
 ![Project Screenshot](https://media.giphy.com/media/l0HU103cWYK6TwIWk/giphy.gif "Pictures list")
+<br/>
+Picture detail
 ![Project Screenshot](https://media.giphy.com/media/l49JMlqEByNOY0zQs/giphy.gif "Picture details")
 
 
