@@ -2,7 +2,7 @@ import React from 'react';
 import {AsyncStorage} from 'react-native';
 import axios from 'axios';
 
-import {API_APOD_URL} from "../config/api";
+import {API_APOD_URL} from "../../config/api";
 
 var PictureRepository = {
     getPictures: function () {

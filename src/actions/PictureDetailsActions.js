@@ -1,9 +1,5 @@
-import PictureRepository from "../data/PictureRepository";
-import {
-    ITEM_DETAILS_FAVORITE,
-    ITEM_DETAILS_FETCH_SUCCESS,
-    ITEM_DETAILS_REMOVE_FAVORITE
-} from "./types";
+import PictureRepository from "../data/picture/PictureRepository";
+import {ITEM_DETAILS_FAVORITE, ITEM_DETAILS_FETCH_SUCCESS, ITEM_DETAILS_REMOVE_FAVORITE} from "./types";
 
 export const fetchPictureDetails = (pictureDate) => {
     return (dispatch) => {

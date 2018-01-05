@@ -1,9 +1,8 @@
 import React from 'react';
-import {Router, Scene} from "react-native-router-flux";
-import PictureList from "./components/list/Pictures";
-import PictureDetail from "./components/PictureDetail";
-import {Actions} from 'react-native-router-flux';
-import Favorite from "./components/Favorite";
+import {Actions, Router, Scene} from "react-native-router-flux";
+import PictureList from "./components/pictures/Pictures";
+import PictureDetail from "./components/picture_detail/PictureDetail";
+import Favorite from "./components/favorites/Favorites";
 
 const RouterComponent = () => {
     return (

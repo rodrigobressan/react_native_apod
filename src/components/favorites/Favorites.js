@@ -1,18 +1,19 @@
 import React, {Component} from 'react';
-import {FlatList, Image, Text, View} from "react-native";
+import {FlatList, View} from "react-native";
 import {connect} from 'react-redux';
-import PictureItem from "./PictureItem";
-import {fetchItems} from "../../actions/ListItemsActions";
+import PictureItem from "../picture_item/PictureItem";
 import Loading from "../common/Loading";
-import {STATE_EMPTY_VIEW, STATE_ERROR, STATE_LOADING, STATE_SUCCESS} from "./states";
+import {STATE_EMPTY_VIEW, STATE_ERROR, STATE_LOADING, STATE_SUCCESS} from "../states";
 import Error from "../common/Error";
 import Empty from "../common/Empty";
+import {fetchFavoriteItems} from "../../actions/FavoriteActions";
 
-class Pictures extends Component {
+
+class Favorite extends Component {
 
     componentWillMount() {
         console.log(this.props);
-        this.props.fetchItems();
+        this.props.fetchFavoriteItems();
     }
 
     renderItem({item}) {
@@ -57,10 +58,10 @@ class Pictures extends Component {
 
 const mapStateToProps = state => {
     return {
-        items: state.listItems.items,
-        state: state.listItems.state
+        items: state.favoriteItems.items,
+        state: state.favoriteItems.state
     };
 
 };
 
-export default connect(mapStateToProps, {fetchItems: fetchItems})(Pictures);
+export default connect(mapStateToProps, {fetchFavoriteItems: fetchFavoriteItems})(Favorite);

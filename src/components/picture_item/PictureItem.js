@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {ImageBackground, Text, View} from "react-native";
 import {Card} from "../common/Card";
 import {Actions} from 'react-native-router-flux';
+import styles from "./style/index.style";
 
 class PictureItem extends Component {
 
@@ -33,29 +34,5 @@ class PictureItem extends Component {
         )
     }
 }
-
-const styles = {
-    imageStyle: {
-        flex: 1,
-        height: 200
-    },
-    textContainer: {
-        justifyContent: 'flex-end',
-        flex: 1,
-        padding: 5
-    },
-    titleText: {
-        color: 'white',
-        fontSize: 18
-    },
-    explanationText: {
-        color: 'white',
-        fontSize: 14
-    },
-    blurView: {
-        backgroundColor: 'rgba(0,0,0,0.4)',
-        flex: 1
-    }
-};
 
 export default PictureItem;

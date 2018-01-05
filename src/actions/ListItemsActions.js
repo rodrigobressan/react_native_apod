@@ -5,7 +5,7 @@
  */
 
 import {ITEMS_FETCH_EMPTY, ITEMS_FETCH_ERROR, ITEMS_FETCH_LOADING, ITEMS_FETCH_SUCCESS} from "./types";
-import PictureRepository from "../data/PictureRepository";
+import PictureRepository from "../data/picture/PictureRepository";
 
 
 /**

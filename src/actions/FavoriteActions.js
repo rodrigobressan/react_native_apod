@@ -1,10 +1,5 @@
-import {
-    FAVORITE_FETCH_EMPTY,
-    FAVORITE_FETCH_ERROR,
-    FAVORITE_FETCH_LOADING,
-    FAVORITE_FETCH_SUCCESS
-} from "./types";
-import PictureRepository from "../data/PictureRepository";
+import {FAVORITE_FETCH_EMPTY, FAVORITE_FETCH_ERROR, FAVORITE_FETCH_LOADING, FAVORITE_FETCH_SUCCESS} from "./types";
+import PictureRepository from "../data/picture/PictureRepository";
 
 export const fetchFavoriteItems = () => {
 

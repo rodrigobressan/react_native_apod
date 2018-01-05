@@ -1,10 +1,10 @@
+import {STATE_EMPTY_VIEW, STATE_ERROR, STATE_LOADING, STATE_SUCCESS} from "../components/states";
 import {
+    FAVORITE_FETCH_EMPTY,
+    FAVORITE_FETCH_ERROR,
+    FAVORITE_FETCH_LOADING,
+    FAVORITE_FETCH_SUCCESS
 } from "../actions/types";
-import {STATE_EMPTY_VIEW, STATE_ERROR, STATE_LOADING, STATE_SUCCESS} from "../components/list/states";
-import {FAVORITE_FETCH_LOADING} from "../actions/types";
-import {FAVORITE_FETCH_SUCCESS} from "../actions/types";
-import {FAVORITE_FETCH_ERROR} from "../actions/types";
-import {FAVORITE_FETCH_EMPTY} from "../actions/types";
 
 const INITIAL_STATE = {
     items: null,

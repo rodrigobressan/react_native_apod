@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Image, Text, View} from "react-native";
+import {Image, View} from "react-native";
 
 class Loading extends Component {
     render() {

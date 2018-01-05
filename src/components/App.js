@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
-import {Text, View} from "react-native";
-import PictureList from "./list/Pictures";
 import {Provider} from 'react-redux';
-import {createStore, applyMiddleware} from 'redux';
+import {applyMiddleware, createStore} from 'redux';
 import ReduxThunk from 'redux-thunk';
 import reducers from '../reducers';
 import Router from "../Router";

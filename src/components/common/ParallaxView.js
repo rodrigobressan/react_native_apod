@@ -7,7 +7,6 @@ import PropTypes from "prop-types";
 import React from "react";
 
 import ReactNative from "react-native";
-
 /**
  * BlurView temporarily removed until semver stuff is set up properly
  *
